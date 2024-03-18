@@ -1,0 +1,17 @@
+cc_test(
+    name = "test",
+    srcs = ["word_generator_test.cc"],
+    copts = ["-Iexternal/gtest/include"],
+    deps = [
+        "//lib:lib",
+        "@googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+  name = "hello_test",
+  size = "small",
+  srcs = ["hello_test.cc"],
+  copts = ["-Iexternal/gtest/include"],
+  deps = ["//main:HelloWorld","@googletest//:gtest_main"],
+)
